@@ -1,0 +1,37 @@
+{
+    "manifest_version": 2,
+    "name": "Quantum Hasher",
+    "version": "0.1.1",
+
+    "description": "Port of Password Hasher for FIrefox Quantum. Better security without bursting your brain.",
+    "homepage_url": "https://github.com/renatolfc/quantum-hasher",
+    "icons": {
+        "32": "icons/quantum-hasher-32.png",
+        "48": "icons/quantum-hasher-48.png",
+        "64": "icons/quantum-hasher-64.png",
+        "96": "icons/quantum-hasher-96.png"
+    },
+
+    "permissions": [
+        "tabs",
+        "clipboardWrite"
+    ],
+
+    "browser_action": {
+        "default_icon": "icons/quantum-hasher-32.png",
+        "default_title": "Quantum Hasher",
+        "default_popup": "popup/password_hasher.html"
+    },
+
+    "background": {
+      "scripts": ["background.js"]
+    },
+
+    "commands": {
+        "_execute_browser_action": {
+            "suggested_key": {
+                "default": "Ctrl+F6"
+            }
+        }
+    }
+}

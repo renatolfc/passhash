@@ -70,6 +70,7 @@ function update_hasher() {
       hash_word.removeClass('key');
     }
     clipboard_copy.disabled = true;
+    hash_word.val('');
   } else {
     if (!hash_word.hasClass('key') &&
        (!reveal.hasClass('reveal') || first_ui_update)) {

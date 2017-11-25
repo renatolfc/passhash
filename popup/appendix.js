@@ -1,6 +1,27 @@
 var background = chrome.extension.getBackgroundPage();
+background.request_current_url();
+var defaultSiteTag;
 
 var first_ui_update = true;
+
+function set_state(state) {
+  state = Object.values(state)[0];
+  $('#site-tag').val(state['site-tag']);
+  $('#size').val(state.size);
+  $('#digit').prop('checked', state.digit);
+  $('#punctuation').prop('checked', state.punctuation);
+  $('#mixedCase').prop('checked', state.mixedCase);
+  $('#noSpecial').prop('checked', state.noSpecial);
+  $('#digitsOnly').prop('checked', state.digitsOnly);
+  $('.range-slider__value').html(state.size);
+  $('#master-key').focus();
+}
+
+function copy_to_clipboard() {
+  hash = $("#hash-word");
+  hash.select();
+  document.execCommand("Copy");
+}
 
 $("#global-help").on('click',function() {
   var create_data = {
@@ -13,11 +34,7 @@ $(".bump").on('click', function() {
   onBump();
 });
 
-$(".clipboard-copy").on('click', function() {
-  hash = $("#hash-word");
-  hash.select();
-  document.execCommand("Copy");
-});
+$(".clipboard-copy").on('click', copy_to_clipboard);
 
 $(".reveal").on('click',function() {
   //var $pwd = $(".pwd");
@@ -82,6 +99,27 @@ function update_hasher() {
   update();
 }
 
+function persist_settings() {
+  var state = {
+    'domain': background.current_domain,
+    'site-tag': $('#site-tag').val(),
+    'size': $('#size').val(),
+    'digit': $('#digit').is(':checked'),
+    'punctuation': $('#punctuation').is(':checked'),
+    'mixedCase': $('#mixedCase').is(':checked'),
+    'noSpecial': $('#noSpecial').is(':checked'),
+    'digitsOnly': $('#digitsOnly').is(':checked')
+  };
+  var key = {};
+  key[background.current_domain] = state;
+  background.persist_settings(key);
+}
+
+function load_settings() {
+  var key = background.current_domain;
+  background.load_settings(set_state);
+}
+
 // Handle Enter key on site-tag:
 $('#site-tag').keypress(function (e) {
   if (e.which == 13) {
@@ -90,18 +128,30 @@ $('#site-tag').keypress(function (e) {
   }
 });
 
+// Handle Enter key on site-tag:
+$('#master-key').keypress(function (e) {
+  if (e.which == 13) {
+    $('form').submit();
+    return false;
+  }
+});
+
 $("form").submit(function(event) {
-  event.preventDefault();
+  persist_settings();
+  copy_to_clipboard();
+  window.close();
 });
 
 window.addEventListener('input', function(event) {
   update_hasher();
 }, false);
 
-rangeSlider();
+window.addEventListener('unload', function(event) {
+}, true);
 
-var domain = PassHashCommon.getDomain(background.current_url);
-var defaultSiteTag = (false ? domain : domain.split(".")[0]);
-$('#site-tag').val(defaultSiteTag);
-
-$("#site-tag").focus();
+window.addEventListener('load', function(event) {
+  defaultSiteTag = (false ? background.current_domain : background.current_domain.split(".")[0]);
+  rangeSlider();
+  $('#site-tag').val(defaultSiteTag);
+  load_settings();
+}, true);

@@ -284,8 +284,6 @@ var PassHashCommon =
                 return '';
             }
             h = tmp[1].split('/')[0].split('.');
-            console.log(tmp);
-            console.log(h);
         }
         if (h.length <= 1)
             return '';

@@ -14,7 +14,8 @@
 
     "permissions": [
         "tabs",
-        "clipboardWrite"
+        "clipboardWrite",
+        "storage"
     ],
 
     "browser_action": {
@@ -33,5 +34,11 @@
                 "default": "Ctrl+F6"
             }
         }
+    },
+
+    "applications": {
+      "gecko": {
+        "id": "quantum-hasher@cunha.io"
+      }
     }
 }

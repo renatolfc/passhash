@@ -73,32 +73,6 @@ function update()
     masterKeyLast = masterKey.value;
 }
 
-function onEnterField(fld, msg)
-{
-    // Select the field
-    try
-    {
-        fld.select();
-    }
-    catch (ex) {}
-    // Set the prompt
-    document.getElementById('prompt').innerHTML = msg;
-}
-
-function checkChange()
-{
-    var siteTag   = document.getElementById('site-tag');
-    var masterKey = document.getElementById('master-key');
-    var hashWord  = document.getElementById('hash-word');
-    if (siteTag.value != siteTagLast || masterKey.value != masterKeyLast)
-    {
-        hashWord.value = '';
-        siteTagLast = siteTag.value;
-        masterKeyLast = masterKey.value;
-    }
-    setTimeout('checkChange()', 1000);
-}
-
 function onNoSpecial(fld)
 {
     document.getElementById('punctuation').disabled = fld.checked;

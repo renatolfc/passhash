@@ -1,17 +1,27 @@
 var current_url = null;
+var current_domain = null;
 
 function set_current_url(tabs) {
   current_url = tabs[0].url;
+  current_domain = PassHashCommon.getDomain(current_url);
 }
 
 function nullify_url() {
   current_url = null;
 }
 
-chrome.tabs.onActivated.addListener(function(active) {
-  browser.tabs.query({active: true, currentWindow: true}).then(set_current_url);
-});
+function persist_settings(key) {
+  browser.storage.sync.set(key);
+}
 
-chrome.tabs.onUpdated.addListener(function(active) {
+function load_settings(callback) {
+  browser.storage.sync.get(current_domain).then(callback);
+}
+
+function request_current_url() {
   browser.tabs.query({active: true, currentWindow: true}).then(set_current_url);
-});
+}
+
+chrome.tabs.onActivated.addListener(request_current_url);
+
+chrome.tabs.onUpdated.addListener(request_current_url);

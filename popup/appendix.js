@@ -81,6 +81,14 @@ function update_hasher() {
   update();
 }
 
+// Handle Enter key on site-tag:
+$('#site-tag').keypress(function (e) {
+  if (e.which == 13) {
+    $('#master-key').focus();
+    return false;
+  }
+});
+
 $("form").submit(function(event) {
   event.preventDefault();
 });

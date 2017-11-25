@@ -1,0 +1,29 @@
+body {
+    min-width: 300px;
+}
+
+input[type=range]{
+  /* fix for FF unable to apply focus style bug  */
+  border: 1px solid white; 
+
+  /*required for proper track sizing in FF*/
+  width: 280px;
+}
+
+input[type=range]::-moz-range-thumb {
+  background-color: #0275d8;
+}
+
+@font-face {
+  font-family: 'password';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/password.eot');
+  src: url('../fonts/password.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/password.woff') format('woff'),
+       url('../fonts/password.woff2') format('woff2');
+}
+
+input.key {
+  font-family: 'password';
+}

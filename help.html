@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"\>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"\>
+    <meta name="description" content=""\>
+    <meta name="author" content=""\>
+
+    <title>Quantum Hasher Help</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Quantum Hasher</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="nav-item">
+            <a href="#about">About <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="#tutorial">Tutorial</a>
+          </li>
+          <li class="nav-item">
+            <a href="#options">Options</a>
+          </li>
+          <li class="nav-item">
+            <a href="#dialog">Dialog</a>
+          </li>
+          <li class="nav-item">
+            <a href="#faq">FAQ</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+      <div style="padding-top: 5em;">
+        <h1 id="about">About</h1>
+
+        <h2>Introduction</h2>
+
+        <h3>What good security practice demands:</h3>
+        <ol>
+          <li>Strong passwords that are hard to guess.</li>
+          <li>Different passwords at each site.</li>
+          <li>Periodically changing existing passwords.</li>
+        </ol>
+
+        <h3>Why you probably aren't practicing good security:</h3>
+        <ol>
+          <li>Strong passwords are difficult to remember.</li>
+          <li>Juggling a multitude of passwords is a pain.</li>
+          <li>Updating passwords compounds the memorization problem.</li>
+        </ol>
+
+        <h3>How Quantum Hasher helps:</h3>
+        <ul>
+          <li>Strong passwords are automatically generated.</li>
+          <li>The same master key produces different passwords at many
+            sites.</li>
+          <li>You can quickly upgrade passwords by "bumping" the site tag.</li>
+          <li>You can upgrade the master key without updating all sites at
+            once.</li>
+          <li>It supports different length passwords.</li>
+          <li>It supports special requirements, such as digit and punctuation
+            characters.</li>
+          <li>All data is saved to the browser's secure password database.</li>
+        </ul>
+
+        <h2>Concepts</h2>
+
+        <h3>Site Tag</h3>
+        <p>
+          A site tag is a simple name, e.g. "google" or "msn", assigned to a site and
+          used to scramble the master key.  For light and medium security levels a
+          default site tag is assigned and then provided whenever you return to the
+          site.  The site tag just needs to be unique.  It does not need to be
+          complex.
+        </p>
+
+        <h3>Master Key</h3>
+        <p>
+          A master key is a strong password you choose and use for many or all sites.
+          Since site tags scramble the master key to create unique passwords, you
+          only need more than one master key when you want to upgrade it for
+          additional security.  At that point you begin updating passwords based on
+          the new master key one site at a time.  You don't have to do them all at
+          once.
+        </p>
+
+        <h3>Hash Word</h3>
+        <p>
+          A hash word is the result of scrambling the master key with a site tag.  It
+          becomes the site password.  You give the master key to Quantum Hasher and
+          it enters the hash word into the site's password field.
+        </p>
+
+        <h3>Using the Quantum Hasher</h3>
+        <p>
+          You can bring up the dialog in any one of the following ways.
+        </p>
+        <ul>
+          <li>
+            Press the <strong>Control-F6</strong> key combination when in a password
+            field.
+          </li>
+          <li>
+            Choose <strong>Quantum Hasher</strong> from either the Tools menu or
+            the browser toolbar button.
+          </li>
+        </ul>
+
+        <hr/>
+        <h1 id="tutorial">Tutorial</h1>
+
+        <h2>Adjust the settings:</h2>
+        <ul>
+          <li>Choose <strong>Light</strong> security if your machine is isolated
+            from other users.</li>
+          <li>Choose <strong>Medium</strong> for normal use.</li>
+          <li>Choose <strong>Heavy</strong> for high security, at the cost of
+            extra typing, but not extra memorization.</li>
+          <li>Check <strong>Password field markers</strong> if you want
+            <img alt="[#]" src="../../skin/marker.png"/> markers next
+            to password fields for simple access to the Quantum Hasher
+            dialog.</li>
+        </ul>
+
+        <h2>Change a site password:</h2>
+        <ol>
+          <li>Access the site's password change area.</li>
+          <li>Select each new password field.</li>
+          <li>Bring up the Quantum Hasher one of the following ways:</li>
+          <ul>
+            <li>Click on the <img alt="[#]"
+                  src="../../skin/marker.png"/> marker if present.</li>
+            <li>Press the <strong>Control-F6</strong> shortcut key combination.</li>
+            <li>Select <strong>Quantum Hasher</strong> from the right-click popup
+              menu.</li>
+            <li>Select <strong>Quantum Hasher</strong> from the Tools menu.</li>
+          </ul>
+          <li>Accept the automatically-generated site tag or provide your own.</li>
+          <li>Press Tab.  The cursor moves to the Master Key field.</li>
+          <li>Type a master key.</li>
+          <li>Press Tab.  The dialog closes and injects the hash word into the
+            password field.</li>
+          <li>Submit the changes after all new password fields have been filled.</li>
+          <li>The next time you log in follow a similar procedure to enter the new
+            password at the login screen.</li>
+          <li>Simply ignore the Quantum Hasher at sites using old passwords.</li>
+        </ol>
+
+        <hr/>
+        <h1 id="options">Options</h1>
+
+        <h2>Security Levels</h2>
+
+        <ul>
+          <li>
+            <strong>Light</strong> maximizes convenience by guessing site tags,
+            remembering entries, and revealing fields as plain text.  It is secure from
+            remote hackers, but less secure from people with physical access to your
+            machine and browser.
+          </li>
+          <li>
+            <strong>Medium</strong> improves protection by hiding the hash word and
+            forcing you to re-enter the master key each time.  This is the default.
+          </li>
+          <li>
+            <strong>Heavy</strong> maximizes security by remembering nothing and hiding
+            everything.  You must enter the site tag and master key each time and
+            manually unmask fields to see their content.
+          </li>
+          <li>
+            <strong>Custom</strong> allows you to specify individual security options.
+            Tip - choose light, medium or heavy before selecting custom to start with a
+            reasonable set of checked options.
+          </li>
+        </ul>
+
+        <h2>Display Options</h2>
+        <ul>
+          <li>
+            <strong>Password field markers</strong> are small
+            <img alt="[#]" src="../../skin/marker.png"/>
+            symbols inserted next to password fields for one-click access to the
+            Quantum Hasher dialog.
+          </li>
+          <li>
+            <strong>Password unmasking markers</strong> are small
+            <img alt="[*]" src="../../skin/unmask.png"/>
+            symbols inserted next to password fields for one-click unmasking
+            (revealing as plain text) of password fields.
+          </li>
+          <li>
+            <strong>Guess full domain</strong> causes guessed site tags to use the
+            entire domain name, e.g. including ".com", ".org", etc., making it
+            easier to have separate logins for sites sharing the same base name.
+            It does result in longer site tags, when you have to type them.
+          </li>
+        </ul>
+
+        <h2>Default Requirements</h2>
+        <p>
+          These settings affect the default options for assuring generated hash words
+          satisfy certain requirements.
+        </p>
+        <ul>
+          <li>
+            <strong>Digit</strong> forces hash words to have at least one digit
+            character.
+          </li>
+          <li>
+            <strong>Punctuation</strong> forces hash words to have at least one
+            punctuation character.
+          </li>
+          <li>
+            <strong>Both upper and lower-case letters</strong> forces hash words to
+            have at least one of each case letter.
+          </li>
+        </ul>
+
+        <h2>Default Size</h2>
+        <p>
+          This setting chooses the default hash word length, i.e. number of characters.
+        </p>
+
+        <hr/>
+        <h1 id="dialog">Dialog</h1>
+        <h2>Fields and Buttons</h2>
+        <ul>
+          <li>
+            <strong>Site tag</strong> is a unique site name.
+          </li>
+          <li>
+            <strong>Master key</strong> is your chosen strong password.
+          </li>
+          <li>
+            <strong>Hash word</strong> is the password generated by scrambling the
+            master key with the site tag.
+          </li>
+          <li>
+            <strong>Bump</strong> adds a number to the site tag in order to generate a
+            different hash word.
+          </li>
+          <li>
+            <strong>Unmask</strong> exposes all hidden fields as plain text.
+          </li>
+          <li>
+            <strong>Options</strong> shows additional choices affecting how the hash
+            word gets generated.
+          </li>
+          <li>
+            <strong>More Info</strong> shows help for using the dialog.
+          </li>
+          <li>
+            <strong>Cancel</strong> abandons the dialog without injecting the hash word.
+          </li>
+          <li>
+            <strong>OK</strong> closes the dialog and injects the hash word into the
+            password field.
+          </li>
+        </ul>
+        <h2>Requirement Options</h2>
+        <ul>
+          <li>
+            <strong>Digit</strong> forces the hash word to have at least one digit
+            character.
+          </li>
+          <li>
+            <strong>Punctuation</strong> force the hash word to have at least one
+            punctuation character.
+          </li>
+          <li>
+            <strong>Mixed case</strong> force the hash word to have both upper and
+            lower-case letters.
+          </li>
+        </ul>
+        <h2>Restriction Options</h2>
+        <ul>
+          <li>
+            <strong>No special characters</strong> forces no punctuation.
+          </li>
+          <li>
+            <strong>Digits only</strong> forces only digits.
+          </ul>
+          <h2>Size Options</h2>
+          <p>
+            Choose a custom hash word length for this site.
+          </p>
+          <h2>Keyboard Navigation</h2>
+          <ul>
+            <li>
+              <strong>Enter</strong> takes you to the next empty field and finally closes
+              the dialog and injects the hash word when done.  This is generally the
+              only navigation key you need, and should be far easier than using a mouse.
+            </li>
+            <li>
+              <strong>Esc</strong> immediately closes the dialog without injecting the
+              hash word.
+            </li>
+          </ul>
+
+          <hr/>
+          <h1 id="faq">FAQ</h1>
+
+          <h2>Frequently-Asked Questions:</h2>
+
+          <h3>Am I really improving my security or just saving effort?</h3>
+          <p>
+            It depends.  It should improve the security of most users by easing the
+            burden of using strong and varied passwords.  On the other hand, if you are
+            highly disciplined and aware of security needs you may actually increase
+            your vulnerability by exposing more sites to intrusion if a master key is
+            stolen.  Of course the hacker will only be successful if he knows to use
+            this tool to regenerate hash words.  If you're reusing passwords already
+            this tool should only help.
+          </p>
+
+          <h3>What if I need to log in and this tool isn't available?</h3>
+          <p>
+            You can generate a Portable Page to load and run in any browser when this
+            extension is unavailable.  You can also use the
+            <a href="http://wijjo.com/passhash/passhash.html" target="_content">
+              online tool</a> to generate identical hash words, but it won't know your
+            site tags and settings.  See the <a href="portable.html">Portable</a> help
+            page for more information.
+          </p>
+          <p>
+            The page fits nicely in a Firefox sidebar for extra convenience.  It is
+            also completely self-contained, so you can move the one HTML file to other
+            storage devices, including USB keys.  page as a single self-contained file
+            and store it on a USB key.
+          </p>
+          <p>
+            Please be aware that the extra hash word filtering and size options make
+            this tool incompatible with other similar tools, e.g.
+            <a href=http://hashapass.com/ target="_content">Hashapass</a>, which may
+            generate different results, depending on which options your are using.
+          </p>
+
+          <h3>Should I record the generated hash words somewhere?</h3>
+          <p>
+            It's not a bad idea, but if you save a Portable Page as backup you have
+            everything but the master key(s).  So it's up to you.  An additional
+            locked-up "dead tree" or electronic copy is an extra measure of safety, in
+            case you need to manually enter the hash words someday.  You can also use a
+            program like <a href="http://keepass.sourceforge.net" target="_content">
+              KeePass</a> (highly recommended for Windows users) to save your data in an
+            encrypted file.
+          </p>
+          <p>
+            Just give a bit of thought to all the scenarios of dying or borrowed
+            computers and broken software. :)
+          </p>
+
+          <h3>Do I have to remember the options set for each site?</h3>
+          <p>
+            Not normally.  The tool remembers it for you.  But if you lose the saved
+            data, e.g. by clearing the Firefox password cache, you need to reproduce
+            the default settings and the overrides for individual sites.  Hopefully you
+            won't have so many special cases that remembering is a problem.
+          </p>
+
+          <h3>Where is the data stored?</h3>
+          <p>
+            Everything is stored in the Firefox password cache.  It's encrypted and
+            secure.  You can use extensions like the
+            <a href="http://addons.mozilla.org/firefox/2848" target="_content">
+              Password Exporter</a> to save this cached data for backup or to transfer
+            it to another machine.
+          </p>
+      </div>
+    </main>
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>

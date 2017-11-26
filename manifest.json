@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Quantum Hasher",
-    "version": "0.3.0",
+    "version": "0.3.1",
 
     "description": "Port of Password Hasher for FIrefox Quantum. Better security without bursting your brain.",
     "homepage_url": "https://github.com/renatolfc/quantum-hasher",

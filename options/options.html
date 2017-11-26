@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Quantum Hasher</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes"/>
+    <script src="/js/jquery-3.2.1.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <form id="options" action=''>
+        <h1>Settings</h1>
+        <h2>Storage</h2>
+        <p>
+          This extension uses <a href="https://www.mozilla.org/firefox/features/sync/">Firefox Sync</a>
+          to save and synchronize its settings between your devices.
+        </p>
+        <h2>Import and Export settings</h2>
+        <p>
+          In case you don't use Firefox, you can synchronize your settings
+          yourself. To do so, use the buttons below to either import or export
+          your settings.
+        </p>
+        <div class="form-group">
+          <div class="text-center">
+            <input type="file" id="file-elem" class='file-selector' accept="*/*" style="display:none">
+            <button class="btn btn-info" id="import-settings">Import Settings...</button>
+            <button class="btn btn-primary button-block" id="export-settings">Export Settings...</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script src="options.js"></script>
+  </body>
+</html>

@@ -36,9 +36,7 @@
         }
     },
 
-    "applications": {
-      "gecko": {
-        "id": "quantum-hasher@cunha.io"
-      }
+    "options_ui": {
+        "page": "options/options.html"
     }
 }

@@ -140,6 +140,7 @@ $("form").submit(function(event) {
   persist_settings();
   copy_to_clipboard();
   window.close();
+  event.preventDefault();
 });
 
 window.addEventListener('input', function(event) {
